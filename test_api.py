@@ -8,9 +8,9 @@ import requests
 
 # test welcome:
 def test_get():
-      response = requests.get("https://salary-prediction-e6q7.onrender.com/welcome/")
+      response = requests.get("https://salary-prediction-e6q7.onrender.com/")
       assert response.status_code == 200
-      assert response.test == "Welcome to the API!"
+      assert response.json() == ["Welcome to the API!"]
 
 def test_post1():
       response = requests.post("https://salary-prediction-e6q7.onrender.com/inference/", 
@@ -50,4 +50,4 @@ def test_post2():
                             "hours-per-week": 40,
                             "native-country": "United-States"})
     assert response.status_code == 200
-    assert response.json() == [">=50K","salary"]
+    assert response.json() == [">50K","salary"]
