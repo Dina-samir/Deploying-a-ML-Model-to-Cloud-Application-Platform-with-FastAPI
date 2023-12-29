@@ -1,0 +1,40 @@
+Performance Metrics for 'workclass':
+Precision: 1.0000
+Recall: 1.0000
+fbeta: 1.0000
+========================================
+Performance Metrics for 'education':
+Precision: 0.8200
+Recall: 0.8367
+fbeta: 0.8283
+========================================
+Performance Metrics for 'marital-status':
+Precision: 1.0000
+Recall: 0.0000
+fbeta: 0.0000
+========================================
+Performance Metrics for 'occupation':
+Precision: 1.0000
+Recall: 1.0000
+fbeta: 1.0000
+========================================
+Performance Metrics for 'relationship':
+Precision: 0.8889
+Recall: 0.2105
+fbeta: 0.3404
+========================================
+Performance Metrics for 'race':
+Precision: 0.7381
+Recall: 0.7045
+fbeta: 0.7209
+========================================
+Performance Metrics for 'sex':
+Precision: 0.7799
+Recall: 0.5277
+fbeta: 0.6294
+========================================
+Performance Metrics for 'native-country':
+Precision: 1.0000
+Recall: 1.0000
+fbeta: 1.0000
+========================================
