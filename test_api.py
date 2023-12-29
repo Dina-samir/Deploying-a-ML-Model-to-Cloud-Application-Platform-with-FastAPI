@@ -20,9 +20,7 @@ def test_get():
 
 
 def test_post1():
-    """Test predict funtion when income is less than 50K"""
-
-    response = client.post("/predict-income", json={
+    response = client.post("/inference", json={
         "age": 30,
         "workclass": "Private",
         "fnlgt": 183175,
@@ -43,9 +41,7 @@ def test_post1():
     
 
 def test_post2():
-    """Test predict funtion when income is more than 50K"""
-
-    response = client.post("/predict-income", json={
+    response = client.post("/inference", json={
         "age": 40,
         "workclass": "Private",
         "fnlgt": 280464,
