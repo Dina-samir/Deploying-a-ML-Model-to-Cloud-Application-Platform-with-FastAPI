@@ -33,7 +33,7 @@ app = FastAPI(title="Inference API",
 # Define a GET on the specified endpoint.
 @app.get("/")
 async def welcome():
-    return {"Welcome to the API!"}
+  return {"Welcome!" : ""Welcome to the API!""}
 
 
 # Declare the data object with its components and their type.
@@ -87,6 +87,6 @@ async def predict(inference: InputData):
     # Convert numpy.int64 to int
     #final_result = {k: int(v) if isinstance(v, np.int64) else v for k, v in inference.dict().items()}
     #final_result['salary']=salary
-    return {"salary",salary}
+    return {"salary: ",salary}
 
 # python -m uvicorn main:app
