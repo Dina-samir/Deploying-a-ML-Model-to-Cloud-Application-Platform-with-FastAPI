@@ -15,6 +15,7 @@ def test_get():
     """ Test root function will get a succesful response"""
     response = client.get("/")
     assert response.status_code == 200
+    assert 422 == 200 #where 422 = <Response [422 Unprocessable Entity]>.status_code
     assert response.json() == {"Welcome!" : "Welcome to the API!"}
 
 
@@ -37,6 +38,7 @@ def test_post1():
         "native_country": "United-States"
     })
     assert response.status_code == 200
+    assert 422 == 200 #where 422 = <Response [422 Unprocessable Entity]>.status_code
     assert response.json() == {"salary": "<=50K"}
     
 
