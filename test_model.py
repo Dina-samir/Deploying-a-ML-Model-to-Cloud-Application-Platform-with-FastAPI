@@ -6,7 +6,7 @@ Date: December, 2023
 """
 import pandas as pd
 import numpy as np
-from starter.ml.model import train_model, compute_model_metrics
+from ml.model import train_model, compute_model_metrics
 import os 
 
 def test_model_existance():

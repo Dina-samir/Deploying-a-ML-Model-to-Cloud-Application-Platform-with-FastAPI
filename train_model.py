@@ -16,7 +16,7 @@ from ml.model import train_model, inference, compute_model_metrics, compute_conf
 
 
 # load in the data.
-data = pd.read_csv('../data/census_clean.csv')
+data = pd.read_csv('./data/census_clean.csv')
 
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
 train, test = train_test_split(data, test_size=0.20, random_state=42, stratify=data['salary'])
@@ -43,9 +43,9 @@ X_test, y_test, _, _ = process_data(
      training=False, encoder=encoder, lb=lb)
 
 # Train and save a model.
-modelpath = '../model/model.pkl'
-encoderpath = '../model/encoder.pkl'
-lbpath = '../model/lb.pkl'
+modelpath = './model/model.pkl'
+encoderpath = './model/encoder.pkl'
+lbpath = './model/lb.pkl'
 
 # if model exits, load the model
 if os.path.exists(modelpath):
@@ -59,7 +59,7 @@ else:
     joblib.dump(model, modelpath)
     joblib.dump(encoder, encoderpath)
     joblib.dump(lb, lbpath)
-model = train_model(X_train, y_train)
+    
 # Compute the model's accuracy.
 y_pred = inference(model, X_test)
 precision, recall, fbeta = compute_model_metrics(y_test, y_pred)
