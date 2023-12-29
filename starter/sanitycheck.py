@@ -22,6 +22,7 @@ def run_sanity_check(test_dir):
     sys.path.append(path.dirname(filepath))
 
     module_name = path.splitext(path.basename(filepath))[0]
+    print(module_name)
     module = importlib.import_module(module_name)
 
 
@@ -133,3 +134,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     run_sanity_check(args.test_dir)
 
+# ./test_app_local.py

@@ -1,5 +1,12 @@
-from sklearn.metrics import fbeta_score, precision_score, recall_score
+"""
+Script contains main functions to train machine learning and compute model metrics.
 
+Author: Dina Samir
+Date: December 2023
+"""
+
+from sklearn.metrics import fbeta_score, precision_score, recall_score, confusion_matrix , accuracy_score
+from sklearn.ensemble import RandomForestClassifier
 
 # Optional: implement hyperparameter tuning.
 def train_model(X_train, y_train):
@@ -17,8 +24,12 @@ def train_model(X_train, y_train):
     model
         Trained machine learning model.
     """
+    rf = RandomForestClassifier(n_estimators=100, max_depth=15, random_state=42, n_jobs=-1,verbose=2)
+    rf.fit(X_train, y_train)
 
-    pass
+    return rf
+
+    
 
 
 def compute_model_metrics(y, preds):
@@ -57,4 +68,39 @@ def inference(model, X):
     preds : np.array
         Predictions from the model.
     """
-    pass
+    return model.predict(X)
+    
+def compute_confusion_matrix(y, y_pred, labels=None):
+    """
+    Compute confusion matrix 
+
+    Inputs
+    ------
+    y : np.array
+        Known labels, binarized.
+    preds : np.array
+        Predicted labels, binarized.
+    Returns
+    ------
+    cm : np.array
+    """
+    cm = confusion_matrix(y, y_pred)
+    return cm
+
+
+def compute_accuracy(y_true,y_pred):
+    """
+    Compute model accuracy
+
+    Inputs
+    ------
+    y_true : np.array
+        Known labels, binarized.
+    preds : np.array
+        Predicted labels, binarized.
+    Returns
+    ------
+    acc : float
+    """
+    acc= accuracy_score(y_true, y_pred) *100
+    return acc
