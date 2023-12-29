@@ -11,7 +11,7 @@ import json
 import numpy as np
 import pandas as pd
 import joblib
-from starter.ml.data import process_data
+from starter.starter.ml.data import process_data
 
 import logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)-15s %(message)s")
