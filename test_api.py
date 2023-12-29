@@ -20,7 +20,7 @@ def test_get():
 
 
 def test_post1():
-    response = client.post("/inference", json={
+    response = client.post("/inference/", json={
         "age": 30,
         "workclass": "Private",
         "fnlgt": 183175,
@@ -41,7 +41,7 @@ def test_post1():
     
 
 def test_post2():
-    response = client.post("/inference", json={
+    response = client.post("/inference/", json={
         "age": 40,
         "workclass": "Private",
         "fnlgt": 280464,
