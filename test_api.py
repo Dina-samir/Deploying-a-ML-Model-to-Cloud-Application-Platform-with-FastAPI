@@ -15,7 +15,7 @@ def test_get():
     """ Test root function will get a succesful response"""
     response = client.get("/")
     assert response.status_code == 200
-    assert response.json() == {"Welcome to the API!"}
+    assert response.json() == {"Welcome!" : ""Welcome to the API!""}
 
 
 
