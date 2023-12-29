@@ -33,7 +33,7 @@ app = FastAPI(title="Inference API",
 # Define a GET on the specified endpoint.
 @app.get("/")
 async def welcome():
-  return {"Welcome!" : ""Welcome to the API!""}
+  return {"Welcome!" : "Welcome to the API!"}
 
 
 # Declare the data object with its components and their type.
